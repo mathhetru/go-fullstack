@@ -1,5 +1,9 @@
 const http = require('http');
 const app = require('./app');
+/* il va chercher le fichier app qui contient les routes d'api */
+
+/* Ajout de la normalisation de port, de la gestion d'erreur et du logging basique au server Node, qui le rend plus constant et plus facile à déboguer.
+ --- CI DESSOUS --- */
 
 const normalizePort = val => {
     const port = parseInt(val, 10);
