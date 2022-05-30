@@ -5,6 +5,13 @@ l'application Express est fondamentalement une série de fonctions appelées MID
 const app = express(); 
 /* on donne un nom à express = app */ 
 
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://user01:user01@gofullstack.rsbmh38.mongodb.net/?retryWrites=true&w=majority',
+    { useNewUrlParser: true,
+    useUnifiedTopology: true })
+    .then(() => console.log('Connexion à MongoDB réussie !'))
+    .catch(() => console.log('Connexion à MongoDB échouée !'));
+
 app.use(express.json());
 /* Pour gérer la requête POST venant de l'application front-end, on a besoin d'en extraire le corps JSON. Pour cela, vous avez juste besoin de ce middleware très simple, mis à disposition par le framework Express.
 Avec ceci, Express prend toutes les requêtes qui ont comme Content-Type  'application/json'  et met à disposition leur  body  directement sur l'objet req */
